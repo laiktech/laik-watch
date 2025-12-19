@@ -13,8 +13,8 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import { withAlpha } from 'utils/colorUtils';
 
 // Sample data
-const monthlyLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const weeklyLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+const monthlyLabels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+const weeklyLabels = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
 
 const monthlyData1 = [76, 85, 101, 98, 87, 105, 91, 114, 94, 86, 115, 35];
 const weeklyData1 = [31, 40, 28, 51, 42, 109, 100];
@@ -92,7 +92,7 @@ export default function IncomeAreaChart({ view }) {
       showMark: false,
       area: true,
       id: 'neutros',
-      color: theme.vars.palette.primary[100] || '',
+      color: theme.vars.palette.warning.main || '',
       visible: visibility['Neutros']
     }
   ];
