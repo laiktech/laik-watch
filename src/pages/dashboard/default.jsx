@@ -26,6 +26,9 @@ import UniqueVisitorCard from 'sections/dashboard/default/UniqueVisitorCard';
 import SaleReportCard from 'sections/dashboard/default/SaleReportCard';
 import OrdersTable from 'sections/dashboard/default/OrdersTable';
 
+// Charts
+import { PieChart } from '@mui/x-charts/PieChart';
+
 // assets
 import EllipsisOutlined from '@ant-design/icons/EllipsisOutlined';
 import GiftOutlined from '@ant-design/icons/GiftOutlined';
@@ -53,6 +56,12 @@ const actionSX = {
   alignSelf: 'flex-start',
   transform: 'none'
 };
+
+const data = [
+  { label: 'Positivos', value: 700 },
+  { label: 'Neutrales', value: 1200 },
+  { label: 'Negativos', value: 1500 },
+];
 
 // ==============================|| DASHBOARD - DEFAULT ||============================== //
 
@@ -105,19 +114,35 @@ export default function DashboardDefault() {
           <Grid />
         </Grid>
         <MainCard sx={{ mt: 2 }} content={false}>
-    {/*       <Box sx={{ p: 3, pb: 0 }}>
-            <Stack sx={{ gap: 2 }}>
-              <Typography variant="h6" color="text.secondary">
-                This Week Statistics
-              </Typography>
-              <Typography variant="h3">$7,650</Typography>
-            </Stack>
-          </Box> */}
           <MonthlyBarChart />
+        </MainCard>
+        <MainCard sx={{ mt: 2 }} content={false}>
+          <Box sx={{ p: 3, pb: 0 }}>
+    {/*         <Stack sx={{ gap: 2 }}> */}
+              <Typography variant="h6" color="text.secondary">
+                Percepción semanal
+              </Typography>
+              <Typography variant="h3">Total: 3400</Typography>
+         {/*    </Stack> */}
+          </Box>
+          <Stack width="100%" height={200}>
+            <PieChart
+            series={[
+              {
+                startAngle: -90,
+                endAngle: 90,
+                paddingAngle: 5,
+                innerRadius: '60%',
+                outerRadius: '100%',
+                data,
+              },
+            ]}
+          />
+          </Stack>
         </MainCard>
       </Grid>
       {/* row 3 */}
-      <Grid size={{ xs: 12, md: 7, lg: 8 }}>
+   {/*    <Grid size={{ xs: 12, md: 7, lg: 8 }}>
         <Grid container sx={{ alignItems: 'center', justifyContent: 'space-between' }}>
           <Grid>
             <Typography variant="h5">Recent Orders</Typography>
@@ -186,9 +211,9 @@ export default function DashboardDefault() {
           </List>
           <ReportAreaChart />
         </MainCard>
-      </Grid>
+      </Grid> */}
       {/* row 4 */}
-      <Grid size={{ xs: 12, md: 7, lg: 8 }}>
+   {/*    <Grid size={{ xs: 12, md: 7, lg: 8 }}>
         <SaleReportCard />
       </Grid>
       <Grid size={{ xs: 12, md: 5, lg: 4 }}>
@@ -303,7 +328,7 @@ export default function DashboardDefault() {
             </Button>
           </Stack>
         </MainCard>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }
