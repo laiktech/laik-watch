@@ -92,7 +92,7 @@ export default function IncomeAreaChart({ view }) {
       showMark: false,
       area: true,
       id: 'neutros',
-      color: theme.vars.palette.warning.main || '',
+      color: theme.vars.palette.warning.light || '',
       visible: visibility['Neutros']
     }
   ];
@@ -128,20 +128,20 @@ export default function IncomeAreaChart({ view }) {
           '& .MuiChartsAxis-root.MuiChartsAxis-directionY .MuiChartsAxis-tick': { stroke: 'transparent' }
         }}
       >
- {/*        <defs>
+       <defs>
           <linearGradient id="myGradient1" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary.main, 0.4)} />
-            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
+            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.success.light, 0.6)} />
+            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.success.light, 0.1)} />
           </linearGradient>
           <linearGradient id="myGradient2" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary[700], 0.4)} />
-            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
+            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.error.main, 0.6)} />
+            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.error.main, 0.1)} />
           </linearGradient>
           <linearGradient id="myGradient3" gradientTransform="rotate(90)">
-            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary[700], 0.4)} />
-            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
+            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.warning.light, 0.6)} />
+            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.warning.light, 0.1)} />
           </linearGradient>
-        </defs> */}
+        </defs>
       </LineChart>
       <Legend items={visibleSeries} onToggle={toggleVisibility} />
     </>
