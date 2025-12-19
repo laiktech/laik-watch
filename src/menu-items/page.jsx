@@ -11,7 +11,7 @@ const icons = {
 
 const pages = {
   id: 'authentication',
-  title: 'Authentication',
+  title: 'Autenticación',
   type: 'group',
   children: [
     {
@@ -24,7 +24,7 @@ const pages = {
     },
     {
       id: 'register1',
-      title: 'Register',
+      title: 'Registrarse',
       type: 'item',
       url: '/register',
       icon: icons.ProfileOutlined,
