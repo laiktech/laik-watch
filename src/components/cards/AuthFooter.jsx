@@ -14,9 +14,9 @@ export default function AuthFooter() {
         sx={{ gap: 2, justifyContent: { xs: 'center', sm: 'space-between', textAlign: { xs: 'center', sm: 'inherit' } } }}
       >
         <Typography variant="subtitle2" color="secondary">
-          © Made with love by Team{' '}
+          © Hecho con pasión por{' '}
           <Link href="https://codedthemes.com/" target="_blank" underline="hover">
-            CodedThemes
+            Laiktech
           </Link>
         </Typography>
 
@@ -29,7 +29,7 @@ export default function AuthFooter() {
             target="_blank"
             underline="hover"
           >
-            Terms and Conditions
+            Términos y condiciones
           </Typography>
           <Typography
             variant="subtitle2"
@@ -39,7 +39,7 @@ export default function AuthFooter() {
             target="_blank"
             underline="hover"
           >
-            Privacy Policy
+            Políticas de privacidad
           </Typography>
         </Stack>
       </Stack>

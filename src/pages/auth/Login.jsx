@@ -19,7 +19,7 @@ export default function Login() {
           <Stack direction="row" sx={{ alignItems: 'baseline', justifyContent: 'space-between', mb: { xs: -0.5, sm: 0.5 } }}>
             <Typography variant="h3">Login</Typography>
             <Typography component={Link} to={'/register'} variant="body1" sx={{ textDecoration: 'none' }} color="primary">
-              Don&apos;t have an account?
+              ¿No tienes una cuenta, aún?
             </Typography>
           </Stack>
         </Grid>
