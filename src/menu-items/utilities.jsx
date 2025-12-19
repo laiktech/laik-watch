@@ -4,8 +4,11 @@ import {
   AntDesignOutlined,
   BarcodeOutlined,
   BgColorsOutlined,
+  FacebookOutlined,
   FontSizeOutlined,
-  LoadingOutlined
+  LoadingOutlined,
+  InstagramOutlined,
+  XOutlined
 } from '@ant-design/icons';
 
 // icons
@@ -14,37 +17,39 @@ const icons = {
   BgColorsOutlined,
   BarcodeOutlined,
   AntDesignOutlined,
+  FacebookOutlined,
   LoadingOutlined,
-  AppstoreAddOutlined
+  AppstoreAddOutlined,
+  InstagramOutlined,
+  XOutlined
 };
-
 // ==============================|| MENU ITEMS - UTILITIES ||============================== //
 
 const utilities = {
   id: 'utilities',
-  title: 'Utilities',
+  title: 'Búsquedas',
   type: 'group',
   children: [
     {
       id: 'util-typography',
-      title: 'Typography',
+      title: 'Twitter (X)',
       type: 'item',
       url: '/typography',
-      icon: icons.FontSizeOutlined
+      icon: icons.XOutlined
     },
     {
       id: 'util-color',
-      title: 'Color',
+      title: 'Instagram',
       type: 'item',
       url: '/color',
-      icon: icons.BgColorsOutlined
+      icon: icons.InstagramOutlined
     },
     {
       id: 'util-shadow',
-      title: 'Shadow',
+      title: 'Facebook',
       type: 'item',
       url: '/shadow',
-      icon: icons.BarcodeOutlined
+      icon: icons.FacebookOutlined
     }
   ]
 };
