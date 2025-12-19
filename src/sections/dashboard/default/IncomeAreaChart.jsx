@@ -22,6 +22,9 @@ const weeklyData1 = [31, 40, 28, 51, 42, 109, 100];
 const monthlyData2 = [110, 60, 150, 35, 60, 36, 26, 45, 65, 52, 53, 41];
 const weeklyData2 = [11, 32, 45, 32, 34, 52, 41];
 
+const monthlyData3 = [80, 160, 50, 47, 23, 77, 55, 101, 23, 89, 88, 24];
+const weeklyData3 = [103, 120, 150, 33, 40, 60, 30];
+
 function Legend({ items, onToggle }) {
   return (
     <Stack direction="row" sx={{ gap: 2, alignItems: 'center', justifyContent: 'center', mt: 2.5, mb: 1.5 }}>
@@ -48,13 +51,15 @@ export default function IncomeAreaChart({ view }) {
   const theme = useTheme();
 
   const [visibility, setVisibility] = useState({
-    'Page views': true,
-    Sessions: true
+    'Positivos': true,
+    Negativos: true,
+    Neutros: true
   });
 
   const labels = view === 'monthly' ? monthlyLabels : weeklyLabels;
   const data1 = view === 'monthly' ? monthlyData1 : weeklyData1;
   const data2 = view === 'monthly' ? monthlyData2 : weeklyData2;
+  const data3 = view === 'monthly' ? monthlyData3 : weeklyData3;
 
   const line = theme.vars.palette.divider;
 
@@ -65,21 +70,30 @@ export default function IncomeAreaChart({ view }) {
   const visibleSeries = [
     {
       data: data1,
-      label: 'Page views',
+      label: 'Positivos',
       showMark: false,
       area: true,
-      id: 'page-views',
-      color: theme.vars.palette.primary.main || '',
-      visible: visibility['Page views']
+      id: 'positives',
+      color: theme.vars.palette.success.light || '',
+      visible: visibility['Positivos']
     },
     {
       data: data2,
-      label: 'Sessions',
+      label: 'Negativos',
       showMark: false,
       area: true,
-      id: 'sessions',
-      color: theme.vars.palette.primary[700] || '',
-      visible: visibility['Sessions']
+      id: 'negativos',
+      color: theme.vars.palette.error.main || '',
+      visible: visibility['Negativos']
+    },
+   {
+      data: data3,
+      label: 'Neutros',
+      showMark: false,
+      area: true,
+      id: 'neutros',
+      color: theme.vars.palette.primary[100] || '',
+      visible: visibility['Neutros']
     }
   ];
 
@@ -107,13 +121,14 @@ export default function IncomeAreaChart({ view }) {
           }))}
         sx={{
           '& .MuiChartsGrid-line': { strokeDasharray: '4 4', stroke: line },
-          '& .MuiAreaElement-series-page-views': { fill: "url('#myGradient1')", strokeWidth: 2, opacity: 0.8 },
-          '& .MuiAreaElement-series-sessions': { fill: "url('#myGradient2')", strokeWidth: 2, opacity: 0.8 },
+          '& .MuiAreaElement-series-positives': { fill: "url('#myGradient1')", strokeWidth: 2, opacity: 0.8 },
+          '& .MuiAreaElement-series-negativos': { fill: "url('#myGradient2')", strokeWidth: 2, opacity: 0.8 },
+          '& .MuiAreaElement-series-neutros': { fill: "url('#myGradient3')", strokeWidth: 2, opacity: 0.8 },
           '& .MuiChartsAxis-root.MuiChartsAxis-directionX .MuiChartsAxis-tick': { stroke: 'transparent' },
           '& .MuiChartsAxis-root.MuiChartsAxis-directionY .MuiChartsAxis-tick': { stroke: 'transparent' }
         }}
       >
-        <defs>
+ {/*        <defs>
           <linearGradient id="myGradient1" gradientTransform="rotate(90)">
             <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary.main, 0.4)} />
             <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
@@ -122,7 +137,11 @@ export default function IncomeAreaChart({ view }) {
             <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary[700], 0.4)} />
             <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
           </linearGradient>
-        </defs>
+          <linearGradient id="myGradient3" gradientTransform="rotate(90)">
+            <stop offset="10%" stopColor={withAlpha(theme.vars.palette.primary[700], 0.4)} />
+            <stop offset="90%" stopColor={withAlpha(theme.vars.palette.background.default, 0.4)} />
+          </linearGradient>
+        </defs> */}
       </LineChart>
       <Legend items={visibleSeries} onToggle={toggleVisibility} />
     </>
