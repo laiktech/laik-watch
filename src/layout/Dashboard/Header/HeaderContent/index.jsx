@@ -6,8 +6,8 @@ import Box from '@mui/material/Box';
 
 // project imports
 import Search from './Search';
-import Profile from './Profile';
-import Notification from './Notification';
+// import Profile from './Profile';
+// import Notification from './Notification';
 import MobileSection from './MobileSection';
 
 // project import
@@ -34,8 +34,8 @@ export default function HeaderContent() {
         <GithubOutlined />
       </IconButton> */}
 
-      <Notification />
-      {!downLG && <Profile />}
+      {/* <Notification /> */}
+      {/* {!downLG && <Profile />} */}
       {downLG && <MobileSection />}
     </>
   );

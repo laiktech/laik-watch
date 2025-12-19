@@ -45,7 +45,7 @@ export default function Header() {
       >
         {!drawerOpen ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
       </IconButton>
-      {headerContent}
+  {/*     {headerContent} */}
     </Toolbar>
   );
 
